@@ -23,31 +23,30 @@ class MyWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.all(20),
-      child: TextButton.icon(
+      child: ElevatedButton.icon(
         onPressed: () {
-          print('TextButton pressed');
-        }, // if disable, set press to null
-        style: TextButton.styleFrom(
-          padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 10),
-          foregroundColor: Colors.pink,
+          print("Elevated Button");
+        },
+        style: ElevatedButton.styleFrom(
           backgroundColor: Colors.green,
-          // minimumSize: const Size(200, 50),
+          foregroundColor: Colors.grey,
+          padding: const EdgeInsets.all(10),
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(8),
+            borderRadius: BorderRadius.circular(30),
           ),
-          elevation: 8,
-          shadowColor: Colors.blue.withOpacity(0.5),
-          side: const BorderSide(width: 1, color: Colors.indigo),
-          disabledBackgroundColor: Colors.grey,
-          disabledForegroundColor: Colors.white,
+          side: const BorderSide(width: 1, color: Colors.yellow),
         ),
         label: const Text(
-          "Text Button",
-          style: TextStyle(fontSize: 20),
+          "Elevated Button",
+          style: TextStyle(
+            fontSize: 20,
+            color: Colors.white,
+          ),
         ),
         icon: const Icon(
-          Icons.add,
-          size: 30,
+          Icons.home,
+          size: 26,
+          color: Colors.white,
         ),
       ),
     );
