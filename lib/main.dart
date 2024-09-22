@@ -1,15 +1,19 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MaterialApp(
+  runApp(
+    MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         fontFamily: "Inter",
       ),
       home: const SafeArea(
-          child: Scaffold(
-        body: MyWidget(),
-      ))));
+        child: Scaffold(
+          body: MyWidget(),
+        ),
+      ),
+    ),
+  );
 }
 
 class MyWidget extends StatelessWidget {
@@ -17,15 +21,35 @@ class MyWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Card(
-        color: Colors.pink,
-        margin: EdgeInsets.fromLTRB(0, 20, 0, 0),
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 12, vertical: 10),
-          child: Text(
-            'Springfield',
-            style: TextStyle(fontSize: 20, color: Colors.black54),
+    return Container(
+      margin: const EdgeInsets.all(20),
+      child: TextButton.icon(
+        onPressed: () {
+          print('TextButton pressed');
+        }, // if disable, set press to null
+        style: TextButton.styleFrom(
+          padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 10),
+          foregroundColor: Colors.pink,
+          backgroundColor: Colors.green,
+          // minimumSize: const Size(200, 50),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(8),
           ),
-        ));
+          elevation: 8,
+          shadowColor: Colors.blue.withOpacity(0.5),
+          side: const BorderSide(width: 1, color: Colors.indigo),
+          disabledBackgroundColor: Colors.grey,
+          disabledForegroundColor: Colors.white,
+        ),
+        label: const Text(
+          "Text Button",
+          style: TextStyle(fontSize: 20),
+        ),
+        icon: const Icon(
+          Icons.add,
+          size: 30,
+        ),
+      ),
+    );
   }
 }
