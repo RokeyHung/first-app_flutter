@@ -22,30 +22,113 @@ class MyWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.all(10),
-      child: Row(
+      padding: const EdgeInsets.all(10),
+      child: Column(
         children: [
-          Expanded(
-            flex: 3,
-            child: Container(
-              color: Colors.green,
-              height: 150,
-            ),
+          const Row(
+            children: [
+              SizedBox(
+                width: 80,
+                child: Text(
+                  "Username",
+                  style: TextStyle(
+                    fontSize: 14,
+                    color: Colors.grey,
+                  ),
+                ),
+              ),
+              Text(
+                "David Ngoo",
+                style: TextStyle(
+                  fontSize: 14,
+                  color: Colors.black,
+                  fontWeight: FontWeight.w500,
+                ),
+              )
+            ],
           ),
-          Expanded(
-            flex: 2,
-            child: Container(
-              color: Colors.blue,
-              height: 150,
-            ),
+          const SizedBox(height: 10),
+          const Row(
+            children: [
+              SizedBox(
+                width: 80,
+                child: Text(
+                  "Email",
+                  style: TextStyle(
+                    fontSize: 14,
+                    color: Colors.grey,
+                  ),
+                ),
+              ),
+              Text(
+                "hhungnm@gmail.com",
+                style: TextStyle(
+                  fontSize: 14,
+                  color: Colors.black,
+                  fontWeight: FontWeight.w500,
+                ),
+              )
+            ],
           ),
-          Expanded(
-            flex: 1,
-            child: Container(
-              color: Colors.orange,
-              height: 150,
-            ),
+          const SizedBox(height: 10),
+          const Row(
+            children: [
+              SizedBox(
+                width: 80,
+                child: Text(
+                  "Address",
+                  style: TextStyle(
+                    fontSize: 14,
+                    color: Colors.grey,
+                  ),
+                ),
+              ),
+              Text(
+                "District 1, Ho Chi Minh",
+                style: TextStyle(
+                  fontSize: 14,
+                  color: Colors.black,
+                  fontWeight: FontWeight.w500,
+                ),
+              )
+            ],
           ),
+          const SizedBox(height: 10),
+          Row(
+            children: [
+              Expanded(
+                child: ElevatedButton(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.blue,
+                  ),
+                  child: const Text(
+                    'Cancel',
+                    style: TextStyle(
+                      fontSize: 14,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(width: 10),
+              Expanded(
+                child: ElevatedButton(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.green,
+                  ),
+                  child: const Text(
+                    'Submit',
+                    style: TextStyle(
+                      fontSize: 14,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+              )
+            ],
+          )
         ],
       ),
     );
