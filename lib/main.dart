@@ -22,30 +22,42 @@ class MyWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return Stack(
       children: [
-        Flexible(
-          flex: 1,
-          fit: FlexFit.loose,
-          child: Container(
-            height: 100,
-            color: Colors.green,
-          ),
+        Container(
+          color: Colors.green,
         ),
-        Flexible(
-          flex: 2,
-          fit: FlexFit.tight,
-          child: Container(
-            color: Colors.yellow,
+        Positioned(
+          bottom: 30,
+          left: 10,
+          right: 10,
+          child: Card(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10),
+            ),
+            child: const Padding(
+              padding: EdgeInsets.all(10.0),
+              child: Column(
+                children: [
+                  Text(
+                    "Springfield",
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  SizedBox(height: 20),
+                  Text(
+                    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries",
+                    style: TextStyle(
+                      fontSize: 16,
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ),
-        ),
-        Flexible(
-          flex: 1,
-          fit: FlexFit.tight,
-          child: Container(
-            color: Colors.blue,
-          ),
-        ),
+        )
       ],
     );
   }
