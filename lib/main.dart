@@ -16,32 +16,28 @@ void main() {
   );
 }
 
-// Color
-// Khi không/có child
-// size: width & height
-// alignment: Alignment, AlignmentDirectional, FractionalOffSet
-// padding, margin
-// decoration: color, shape, borderRadius, border
-// transform
 class MyWidget extends StatelessWidget {
   const MyWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 200,
-      height: 300,
-      alignment: Alignment.center,
-      margin: EdgeInsets.all(10),
-      padding: EdgeInsets.all(20),
-      decoration: BoxDecoration(
-        color: Colors.green,
-        shape: BoxShape.rectangle,
-        borderRadius: BorderRadius.all(Radius.circular(10)),
-        border: Border.all(width: 2, color: Colors.red),
+    return SizedBox.expand(
+      // width: double.infinity,
+      // height: double.infinity,
+      child: ElevatedButton(
+        onPressed: () {},
+        style: ElevatedButton.styleFrom(
+          backgroundColor: Colors.green,
+          foregroundColor: Colors.white,
+          shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.zero,
+          ),
+        ),
+        child: const Text(
+          "Springfield",
+          style: TextStyle(fontSize: 30),
+        ),
       ),
-      transform: Matrix4.rotationZ(0.2),
-      child: Text("data"),
     );
   }
 }
