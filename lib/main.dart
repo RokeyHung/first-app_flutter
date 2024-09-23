@@ -16,39 +16,32 @@ void main() {
   );
 }
 
+// Color
+// Khi không/có child
+// size: width & height
+// alignment: Alignment, AlignmentDirectional, FractionalOffSet
+// padding, margin
+// decoration: color, shape, borderRadius, border
+// transform
 class MyWidget extends StatelessWidget {
   const MyWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.all(20),
-      child: ElevatedButton.icon(
-        onPressed: () {
-          print("Elevated Button");
-        },
-        style: ElevatedButton.styleFrom(
-          backgroundColor: Colors.green,
-          foregroundColor: Colors.grey,
-          padding: const EdgeInsets.all(10),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(30),
-          ),
-          side: const BorderSide(width: 1, color: Colors.yellow),
-        ),
-        label: const Text(
-          "Elevated Button",
-          style: TextStyle(
-            fontSize: 20,
-            color: Colors.white,
-          ),
-        ),
-        icon: const Icon(
-          Icons.home,
-          size: 26,
-          color: Colors.white,
-        ),
+      width: 200,
+      height: 300,
+      alignment: Alignment.center,
+      margin: EdgeInsets.all(10),
+      padding: EdgeInsets.all(20),
+      decoration: BoxDecoration(
+        color: Colors.green,
+        shape: BoxShape.rectangle,
+        borderRadius: BorderRadius.all(Radius.circular(10)),
+        border: Border.all(width: 2, color: Colors.red),
       ),
+      transform: Matrix4.rotationZ(0.2),
+      child: Text("data"),
     );
   }
 }
