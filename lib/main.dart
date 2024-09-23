@@ -22,36 +22,29 @@ class MyWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.grey,
-      width: 300,
-      child: Column(
-        mainAxisSize: MainAxisSize.max,
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        crossAxisAlignment: CrossAxisAlignment.center,
+      margin: const EdgeInsets.all(10),
+      child: Row(
         children: [
-          ElevatedButton(
-            onPressed: () {},
-            style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.green,
-              foregroundColor: Colors.white,
+          Expanded(
+            flex: 3,
+            child: Container(
+              color: Colors.green,
+              height: 150,
             ),
-            child: const Text('Springfield'),
           ),
-          ElevatedButton(
-            onPressed: () {},
-            style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.green,
-              foregroundColor: Colors.white,
+          Expanded(
+            flex: 2,
+            child: Container(
+              color: Colors.blue,
+              height: 150,
             ),
-            child: const Text('Vintage'),
           ),
-          ElevatedButton(
-            onPressed: () {},
-            style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.green,
-              foregroundColor: Colors.white,
+          Expanded(
+            flex: 1,
+            child: Container(
+              color: Colors.orange,
+              height: 150,
             ),
-            child: const Text('Embroidery'),
           ),
         ],
       ),
