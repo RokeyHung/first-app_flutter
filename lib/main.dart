@@ -16,50 +16,37 @@ void main() {
   );
 }
 
-// width, height
-// fit
-// alignment
-// textDecoration
-// clipBehavior
+// Expanded vs Flexible
 class MyWidget extends StatelessWidget {
   const MyWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 500,
-      height: 500,
-      color: Colors.grey,
-      child: Stack(
-        fit: StackFit.loose,
-        // alignment: Alignment.bottomRight,
-        // textDirection: TextDirection.ltr,
-        clipBehavior: Clip.none,
-        children: [
-          Container(
-            width: 300,
-            height: 300,
+    return Column(
+      children: [
+        Flexible(
+          flex: 1,
+          fit: FlexFit.loose,
+          child: Container(
+            height: 100,
+            color: Colors.green,
+          ),
+        ),
+        Flexible(
+          flex: 2,
+          fit: FlexFit.tight,
+          child: Container(
+            color: Colors.yellow,
+          ),
+        ),
+        Flexible(
+          flex: 1,
+          fit: FlexFit.tight,
+          child: Container(
             color: Colors.blue,
           ),
-          Positioned(
-            left: 30,
-            bottom: -30,
-            child: Container(
-              width: 200,
-              height: 200,
-              color: Colors.green,
-            ),
-          ),
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: Container(
-              width: 100,
-              height: 100,
-              color: Colors.pink,
-            ),
-          ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
