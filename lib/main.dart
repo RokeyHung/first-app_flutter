@@ -16,119 +16,48 @@ void main() {
   );
 }
 
+// width, height
+// fit
+// alignment
+// textDecoration
+// clipBehavior
 class MyWidget extends StatelessWidget {
   const MyWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(10),
-      child: Column(
+      width: 500,
+      height: 500,
+      color: Colors.grey,
+      child: Stack(
+        fit: StackFit.loose,
+        // alignment: Alignment.bottomRight,
+        // textDirection: TextDirection.ltr,
+        clipBehavior: Clip.none,
         children: [
-          const Row(
-            children: [
-              SizedBox(
-                width: 80,
-                child: Text(
-                  "Username",
-                  style: TextStyle(
-                    fontSize: 14,
-                    color: Colors.grey,
-                  ),
-                ),
-              ),
-              Text(
-                "David Ngoo",
-                style: TextStyle(
-                  fontSize: 14,
-                  color: Colors.black,
-                  fontWeight: FontWeight.w500,
-                ),
-              )
-            ],
+          Container(
+            width: 300,
+            height: 300,
+            color: Colors.blue,
           ),
-          const SizedBox(height: 10),
-          const Row(
-            children: [
-              SizedBox(
-                width: 80,
-                child: Text(
-                  "Email",
-                  style: TextStyle(
-                    fontSize: 14,
-                    color: Colors.grey,
-                  ),
-                ),
-              ),
-              Text(
-                "hhungnm@gmail.com",
-                style: TextStyle(
-                  fontSize: 14,
-                  color: Colors.black,
-                  fontWeight: FontWeight.w500,
-                ),
-              )
-            ],
+          Positioned(
+            left: 30,
+            bottom: -30,
+            child: Container(
+              width: 200,
+              height: 200,
+              color: Colors.green,
+            ),
           ),
-          const SizedBox(height: 10),
-          const Row(
-            children: [
-              SizedBox(
-                width: 80,
-                child: Text(
-                  "Address",
-                  style: TextStyle(
-                    fontSize: 14,
-                    color: Colors.grey,
-                  ),
-                ),
-              ),
-              Text(
-                "District 1, Ho Chi Minh",
-                style: TextStyle(
-                  fontSize: 14,
-                  color: Colors.black,
-                  fontWeight: FontWeight.w500,
-                ),
-              )
-            ],
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Container(
+              width: 100,
+              height: 100,
+              color: Colors.pink,
+            ),
           ),
-          const SizedBox(height: 10),
-          Row(
-            children: [
-              Expanded(
-                child: ElevatedButton(
-                  onPressed: () {},
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blue,
-                  ),
-                  child: const Text(
-                    'Cancel',
-                    style: TextStyle(
-                      fontSize: 14,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
-              ),
-              const SizedBox(width: 10),
-              Expanded(
-                child: ElevatedButton(
-                  onPressed: () {},
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.green,
-                  ),
-                  child: const Text(
-                    'Submit',
-                    style: TextStyle(
-                      fontSize: 14,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
-              )
-            ],
-          )
         ],
       ),
     );
